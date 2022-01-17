@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 
 function Ball({balls,buyballs,sellballs}) {
+    const [qut,setqut]=useState(1);
     return (
         <div>
             <h1>Balls: {balls}</h1>
-            <button onClick={buyballs}>buy</button>
+            <input type="number" value={qut} onChange={(e)=>setqut(e.target.value)}/>
+            <button onClick={()=>buyballs(qut)}>buy</button>
             <button onClick={sellballs}>sell</button>
         </div>
     )
@@ -18,7 +20,7 @@ const mapStateToProps=(state)=>{
 
 const mapDispatchToProp=(dispatch)=>{
     return{
-        buyballs:()=>dispatch({type:"BUY_BALLS"}),
+        buyballs:(qut)=>dispatch({type:"BUY_BALLS",payload:qut}),
         sellballs:()=>dispatch({type:"SELL_BALLS"})
 
     }

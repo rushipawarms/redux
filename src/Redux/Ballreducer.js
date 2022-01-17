@@ -6,7 +6,7 @@ const Ballreducer=(state=initialState,action)=>{
     switch(action.type)
     {
         case "BUY_BALLS":
-            return {...state,balls:state.balls-1}
+            return {...state,balls:state.balls-action.payload}
         case "SELL_BALLS":
             return {...state,balls:state.balls+1}
         default:

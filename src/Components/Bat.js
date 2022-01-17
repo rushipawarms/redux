@@ -13,12 +13,13 @@ function Bat(props) {
 }
 
 const mapStateToProps=(state)=>{
-   return {bats:state.bats}
+   return {bats:state.bats.bats}
 }
 
 const mapDispatchToProp=(dispatch)=>{
     return{
         buybat:()=>dispatch({type:"BUY_BATS"})
+
     }
 
 }

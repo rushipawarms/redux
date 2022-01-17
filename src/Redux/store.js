@@ -1,6 +1,8 @@
 import {createStore} from 'redux'
 import Batreducer from './Batreducer'
 import {composeWithDevTools} from 'redux-devtools-extension'
-const store=createStore(Batreducer,composeWithDevTools());
+import Ballreducer from './Ballreducer';
+import Rootreducer from './Rootreducer';
+const store=createStore(Rootreducer,composeWithDevTools());
 
 export default store

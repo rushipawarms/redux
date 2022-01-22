@@ -4,6 +4,7 @@ import Bat from './Components/Bat';
 import {Provider} from 'react-redux'
 import store from './Redux/store';
 import Ball from './Components/Ball';
+import Users from './Components/Users';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Provider store={store}>
       <Bat/>
       <Ball/>
+      <Users/>
       </Provider>
   
     </div>

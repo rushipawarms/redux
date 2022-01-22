@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
+import { ballbuy } from '../Redux/Ballaction';
+
 
 function Ball({balls,buyballs,sellballs}) {
     const [qut,setqut]=useState(1);
@@ -20,7 +22,7 @@ const mapStateToProps=(state)=>{
 
 const mapDispatchToProp=(dispatch)=>{
     return{
-        buyballs:(qut)=>dispatch({type:"BUY_BALLS",payload:qut}),
+        buyballs:(qut)=>dispatch(ballbuy(qut)),
         sellballs:()=>dispatch({type:"SELL_BALLS"})
 
     }
